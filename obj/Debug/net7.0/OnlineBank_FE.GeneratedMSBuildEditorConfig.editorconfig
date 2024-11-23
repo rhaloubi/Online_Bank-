@@ -1,0 +1,53 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = OnlineBank_FE
+build_property.RootNamespace = OnlineBank_FE
+build_property.ProjectDir = /Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Pages/Dashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGFzaGJvYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Pages/LandingPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGFuZGluZ1BhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-tsg0putvbq
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-11hpuypww9

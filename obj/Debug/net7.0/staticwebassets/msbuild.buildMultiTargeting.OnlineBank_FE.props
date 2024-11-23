@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/OnlineBank_FE.props" />
+</Project>

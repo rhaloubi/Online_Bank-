@@ -1,0 +1,218 @@
+﻿@page "/dashboard"
+@using System.Globalization
+@inject NavigationManager Navigation
+@inject OnlineBank_FE.Services.AuthService AuthService
+
+<body class="bg-gray-900 text-white">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="fixed flex flex-col px-4 py-2 w-64 bg-gray-950 h-screen">
+            <div class="flex items-center px-6 h-20">
+                <h1 class="text-2xl font-bold">Online Bank</h1>
+            </div>
+            <nav class="mt-6 flex-grow">
+                <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
+                    <svg class="w-5 h-5 mb-1 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-6 9 6v12a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                    </svg>
+                    <a href="#" class="text-[18px]">Dashboard</a>
+                </li>
+                <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
+                    <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
+                    </svg>
+                    <a href="#" class="text-[18px]">Transactions</a>
+                </li>
+                <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
+                    <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
+                    </svg>
+                    <a href="#" class="text-[18px]">Payments</a>
+                </li>
+                <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
+                    <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
+                    </svg>
+                    <a href="#" class="text-[18px]">Cards</a>
+                </li>
+                <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
+                    <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
+                    </svg>
+                    <a href="#" class="text-[18px]">Credit</a>
+                </li>
+            </nav>
+
+            <!-- User Button -->
+            <div class="relative mt-auto">
+                <button class="flex items-center justify-between w-full px-5 py-3 rounded-[10px] text-gray-400 " id="userButton">
+                    <div class="flex items-center">
+                        <svg class="w-10 h-10 rounded-full bg-gray-700 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10" />
+                        </svg>
+                        <span class="text-left">Mara C.</span>
+                    </div>
+                    <svg id="dropdownIcon2" class="w-4 h-4 transition-transform duration-200 rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19l7-7-7-7" />
+                    </svg>
+                </button>
+                <div id="userDropdown" class="hidden absolute left-0 w-full bg-gray-900 border border-gray-700 rounded-md shadow-lg z-10" style="bottom: 100%;">
+                    <a href="#" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Documents</a>
+                    <a href="#" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Offers</a>
+                    <a href="#" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Settings</a>
+                    <a href="#" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Logout</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-4 px-16 ml-64">
+            <header class="flex justify-between items-center relative inline-block text-left mb-6 relative bg-gray-900 text-white">
+                <button class="bg-purple-600 px-6 py-3 rounded-full ml-auto flex items-center" id="dropdownButton">
+                    <span>Move Money</span>
+                    <svg id="dropdownIcon" class="w-4 h-4 ml-2 transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+                <div class="relative inline-block text-left">
+                    <div id="dropdownMenu" class="hidden absolute right-0 z-10 mt-8 w-52 bg-gray-900 border border-gray-700 rounded-md shadow-lg ">
+                        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="dropdownButton">
+                            <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md  text-gray-100 hover:bg-gray-600" role="menuitem">
+                                <span class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z" />
+                                    </svg>
+                                    Send
+                                </span>
+                                <span class=" text-[12px] px-[24px] text-gray-500">Send someone money</span>
+                            </a>
+
+                            <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md  text-gray-100 hover:bg-gray-600" role="menuitem">
+                                <span class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z" />
+                                    </svg>
+                                    Receive
+                                </span>
+                                <span class=" text-[12px] px-[24px] text-gray-500">Add or receive funds</span>
+                            </a>
+
+                            <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md  text-gray-100 hover:bg-gray-600" role="menuitem">
+                                <span class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z" />
+                                    </svg>
+                                    Cards
+                                </span>
+                                <span class=" text-[12px] px-[24px] text-gray-500">Manage your cards</span>
+                            </a>
+
+                            <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md  text-gray-100 hover:bg-gray-600" role="menuitem">
+                                <span class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z" />
+                                    </svg>
+                                    Accounts
+                                </span>
+                                <span class=" text-[12px] px-[24px] text-gray-500">Manage your accounts</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="grid grid-cols-5 gap-6">
+                <!-- Account Info Card -->
+                <div class="bg-gray-950 p-9 rounded-lg  border border-gray-800  col-span-2">
+                    <h3 class="text-xl text-gray-500 pb-[40px]">MARA'S ACCOUNT</h3>
+                    <h2 class="text-[60px] pb-[32px]">Welcome back, Mara! 👋</h2>
+                    <p class="text-[18px] mt-2 text-gray-500 pb-[40px]">
+                        Everything seems ok and up-to-date with your account since your last visit. Would you like to fund it?
+                    </p>
+                    <button class="bg-purple-600 hover:bg-purple-700 px-11 py-3 rounded-full items-center mt-auto">
+                        <span class="text-[18px]">Fund my Account</span>
+                    </button>
+
+                </div>
+
+                <!-- Chart Card -->
+                <div class="bg-gray-950 p-4 rounded-lg  border border-gray-800  col-span-3">
+                    <h2 class="text-xl text-center pt-3 text-gray-500">
+                        Account Balance
+                    </h2>
+                    <p class="text-4xl mt-2 text-center">$ 9,543.12</p>
+                    <p class="text-sm text-gray-500 text-center">+$149.32 Today, Sep 25</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 mt-6">
+                <!-- Money Out Last 30 Days -->
+                <div class="bg-gray-950 px-[45px] py-[55px] border border-gray-800 rounded-lg">
+                    <h3 class="text-[30px] text-gray-500 ">MONEY OUT LAST 30 DAYS</h3>
+                    <p class="text-[40px] mt-6 mb-6">$0.00</p>
+                    <p class="text-md text-gray-600 pb-1 border-b-[2px] mb-8 border-gray-600">No outgoing transactions yet</p>
+                    <div class="flex justify-end">
+                        <button class="flex group inline-flex items-center gap-3 text-purple-600 hover:text-purple-400 transition-colors duration-300">
+                            <span class="hover:translate-x text-[20px] transition-transform duration-200">View All</span>
+                            <svg class="iconify w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Money In Last 30 Days -->
+                <div class="bg-gray-950 px-[45px] py-[55px]  border border-gray-800 rounded-lg">
+                    <h3 class="text-[30px] text-gray-500">MONEY IN LAST 30 DAYS</h3>
+                    <p class="text-[40px] mt-6 mb-6">$0.00</p>
+                    <p class="text-md text-gray-600 pb-1 border-b-[2px] mb-8 border-gray-600">No incoming transactions yet</p>
+                    <div class="flex justify-end">
+                        <button class="flex group inline-flex items-center gap-3 text-purple-600 hover:text-purple-400 transition-colors duration-300">
+                            <span class="hover:translate-x text-[20px] transition-transform duration-200">View All</span>
+                            <svg class="iconify w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+@code {
+    private bool isUserDropdownVisible = false;
+    private string userDropdownClass => isUserDropdownVisible ? "rotate-180" : "";
+    private string userDropdownVisibility => isUserDropdownVisible ? "block" : "hidden";
+
+    private bool isMoveMoneyDropdownVisible = false;
+    private string moveMoneyDropdownClass => isMoveMoneyDropdownVisible ? "rotate-180" : "";
+    private string moveMoneyDropdownVisibility => isMoveMoneyDropdownVisible ? "block" : "hidden";
+
+    private void ToggleUserDropdown()
+    {
+        isUserDropdownVisible = !isUserDropdownVisible;
+    }
+
+    private void ToggleMoveMoneyDropdown()
+    {
+        isMoveMoneyDropdownVisible = !isMoveMoneyDropdownVisible;
+    }
+
+        protected override void OnInitialized()
+        {
+            // Redirect to login if not authenticated
+            if (!AuthService.IsLoggedIn)
+            {
+                Navigation.NavigateTo("/login");
+            }
+        }
+
+        private void Logout()
+        {
+            AuthService.LogoutAsync();
+            Navigation.NavigateTo("/login");
+        }
+
+}
