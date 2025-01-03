@@ -180,21 +180,21 @@ public class ClientsController : ControllerBase
     {
         var claims = new[]
         {
-            new Claim(ClaimTypes.NameIdentifier, client.ClientID.ToString()),
-            new Claim(ClaimTypes.Name, client.Name),
-            new Claim(ClaimTypes.Email, client.Email),
-            new Claim(ClaimTypes.Role, "Client") // Assign the Clinet role to the claims
+        new Claim(ClaimTypes.NameIdentifier, client.ClientID.ToString()), // The unique client ID as the identifier
+        new Claim(ClaimTypes.Name, client.Name),                          // The name of the client
+        new Claim(ClaimTypes.Email, client.Email),                        // The email of the client
+        new Claim(ClaimTypes.Role, "Client")                               // The role of the client
+    };
 
-        };
-
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"])); // Secret key to sign the token
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256); // Signing algorithm
 
         var token = new JwtSecurityToken(
             claims: claims,
-            expires: DateTime.Now.AddHours(1),
-            signingCredentials: creds);
+            expires: DateTime.Now.AddHours(1), // Token expiration time
+            signingCredentials: creds); // Signing the token
 
-        return new JwtSecurityTokenHandler().WriteToken(token);
+        return new JwtSecurityTokenHandler().WriteToken(token); // Convert the token to string
     }
+
 }

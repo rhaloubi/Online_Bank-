@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace OnlineBank.Migrations
 {
     [DbContext(typeof(OnlineBankContext))]
-    partial class OnlineBankContextModelSnapshot : ModelSnapshot
+    [Migration("20241222181555_AddTransactionModel")]
+    partial class AddTransactionModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -246,7 +249,7 @@ namespace OnlineBank.Migrations
 
             modelBuilder.Entity("OnlineBank.Models.Transaction", b =>
                 {
-                    b.HasOne("OnlineBank.Models.Account", "Account")
+                    b.HasOne("OnlineBank.Models.Client", "Account")
                         .WithMany()
                         .HasForeignKey("AccountID")
                         .OnDelete(DeleteBehavior.Cascade)
