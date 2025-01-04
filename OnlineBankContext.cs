@@ -12,7 +12,6 @@ public class OnlineBankContext : DbContext
     public DbSet<Admin> Admins { get; set; }
     public DbSet<Account> Accounts { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
-    public DbSet<Loan> Loans { get; set; }
     public DbSet<SocialLoan> SocialLoans { get; set; }
     public DbSet<Friendship> Friendships { get; set; }
     public DbSet<Notification> Notifications { get; set; }

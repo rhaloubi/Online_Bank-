@@ -56,7 +56,7 @@ public class TransactionController : ControllerBase
         // Log transaction
         var transaction = new Transaction
         {
-            AccountID = account.AccountID,
+            Account1ID = account.AccountID,
             Amount = amount,
             Date = DateTime.UtcNow,
             Type = "Deposit"
@@ -119,30 +119,24 @@ public class TransactionController : ControllerBase
         // Log transactions
         var sourceTransaction = new Transaction
         {
-            AccountID = sourceAccount.AccountID,
-            Amount = -amount,
-            Date = DateTime.UtcNow,
-            Type = "Transfer Out"
-        };
-
-        var targetTransaction = new Transaction
-        {
-            AccountID = targetAccount.AccountID,
+            Account1ID = sourceAccount.AccountID,
+            Account2ID = targetAccount.AccountID,
             Amount = amount,
             Date = DateTime.UtcNow,
-            Type = "Transfer In"
+            Type = "Transfer "
         };
 
-        await _context.Transactions.AddRangeAsync(sourceTransaction, targetTransaction);
+
+        await _context.Transactions.AddRangeAsync(sourceTransaction);
         await _context.SaveChangesAsync();
 
         return Ok(new { message = "Transfer successful", sourceBalance = sourceAccount.Balance, targetBalance = targetAccount.Balance });
     }
 
     // Transaction
-    [HttpGet("Transaction")]
+    [HttpGet("TransactionOut")]
     [Authorize(Roles = "Client")]
-    public async Task<IActionResult> GetTransaction()
+    public async Task<IActionResult> GetTransactionOut()
     {
         var clientId = GetClientIdFromToken();
 
@@ -155,16 +149,45 @@ public class TransactionController : ControllerBase
         }
 
         // Get all transactions associated with the account
-        var transactions = await _context.Transactions
-                                          .Where(t => t.Account2ID == account.AccountID)
+        var transactionsOut = await _context.Transactions
+                                          .Where(t => t.Account1ID == account.AccountID)
                                           .ToListAsync();
 
-        if (transactions == null || !transactions.Any())
+        if (transactionsOut == null || !transactionsOut.Any())
         {
             return NotFound("The client has no transactions.");
         }
 
-        return Ok(transactions);
+        return Ok(transactionsOut);
+    }
+
+
+    // Transaction
+    [HttpGet("TransactionIn")]
+    [Authorize(Roles = "Client")]
+    public async Task<IActionResult> GetTransactionIn()
+    {
+        var clientId = GetClientIdFromToken();
+
+        // Get the account associated with the current client
+        var account = await _context.Accounts.FirstOrDefaultAsync(a => a.ClientID == clientId);
+
+        if (account == null)
+        {
+            return NotFound("Account not found or not associated with the current client.");
+        }
+
+        // Get all transactions associated with the account
+        var transactionsIn = await _context.Transactions
+                                          .Where(t => t.Account2ID == account.AccountID)
+                                          .ToListAsync();
+
+        if (transactionsIn == null || !transactionsIn.Any())
+        {
+            return NotFound("The client has no transactions.");
+        }
+
+        return Ok(transactionsIn);
     }
 
 

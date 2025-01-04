@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace OnlineBank.Migrations
 {
     [DbContext(typeof(OnlineBankContext))]
-    [Migration("20241118164744_UpdateAccountModel")]
-    partial class UpdateAccountModel
+    [Migration("20250104204150_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,15 +51,12 @@ namespace OnlineBank.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Permissions")
@@ -83,15 +80,12 @@ namespace OnlineBank.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("PhoneNumber")
@@ -104,55 +98,26 @@ namespace OnlineBank.Migrations
 
             modelBuilder.Entity("OnlineBank.Models.Friendship", b =>
                 {
-                    b.Property<int>("FriendshipID")
+                    b.Property<int?>("FriendshipID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Friend1ID")
+                    b.Property<int?>("Friend1ID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Friend2ID")
+                    b.Property<int?>("Friend2ID")
                         .HasColumnType("int");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("FriendshipID");
 
+                    b.HasIndex("Friend1ID");
+
+                    b.HasIndex("Friend2ID");
+
                     b.ToTable("Friendships");
-                });
-
-            modelBuilder.Entity("OnlineBank.Models.Loan", b =>
-                {
-                    b.Property<int>("LoanID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(65,30)");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("Duration")
-                        .HasColumnType("int");
-
-                    b.Property<float>("InterestRate")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("LoanID");
-
-                    b.ToTable("Loans");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Loan");
-
-                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("OnlineBank.Models.Notification", b =>
@@ -177,10 +142,53 @@ namespace OnlineBank.Migrations
                     b.ToTable("Notifications");
                 });
 
+            modelBuilder.Entity("OnlineBank.Models.SocialLoan", b =>
+                {
+                    b.Property<int>("LoanID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Account1ID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Account2ID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("Amount")
+                        .HasColumnType("decimal(65,30)");
+
+                    b.Property<DateTime?>("Date")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Reason")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("LoanID");
+
+                    b.HasIndex("Account1ID");
+
+                    b.HasIndex("Account2ID");
+
+                    b.ToTable("SocialLoans");
+                });
+
             modelBuilder.Entity("OnlineBank.Models.Transaction", b =>
                 {
                     b.Property<int>("TransactionID")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Account1ID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Account2ID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Amount")
@@ -195,28 +203,11 @@ namespace OnlineBank.Migrations
 
                     b.HasKey("TransactionID");
 
+                    b.HasIndex("Account1ID");
+
+                    b.HasIndex("Account2ID");
+
                     b.ToTable("Transactions");
-                });
-
-            modelBuilder.Entity("OnlineBank.Models.SocialLoan", b =>
-                {
-                    b.HasBaseType("OnlineBank.Models.Loan");
-
-                    b.Property<int>("BorrowerID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LenderID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Reason")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("RepaymentSchedule")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasDiscriminator().HasValue("SocialLoan");
                 });
 
             modelBuilder.Entity("OnlineBank.Models.Account", b =>
@@ -228,6 +219,51 @@ namespace OnlineBank.Migrations
                         .IsRequired();
 
                     b.Navigation("Client");
+                });
+
+            modelBuilder.Entity("OnlineBank.Models.Friendship", b =>
+                {
+                    b.HasOne("OnlineBank.Models.Client", "Client1")
+                        .WithMany()
+                        .HasForeignKey("Friend1ID");
+
+                    b.HasOne("OnlineBank.Models.Client", "Client2")
+                        .WithMany()
+                        .HasForeignKey("Friend2ID");
+
+                    b.Navigation("Client1");
+
+                    b.Navigation("Client2");
+                });
+
+            modelBuilder.Entity("OnlineBank.Models.SocialLoan", b =>
+                {
+                    b.HasOne("OnlineBank.Models.Account", "Account1")
+                        .WithMany()
+                        .HasForeignKey("Account1ID");
+
+                    b.HasOne("OnlineBank.Models.Account", "Account2")
+                        .WithMany()
+                        .HasForeignKey("Account2ID");
+
+                    b.Navigation("Account1");
+
+                    b.Navigation("Account2");
+                });
+
+            modelBuilder.Entity("OnlineBank.Models.Transaction", b =>
+                {
+                    b.HasOne("OnlineBank.Models.Account", "Account1")
+                        .WithMany()
+                        .HasForeignKey("Account1ID");
+
+                    b.HasOne("OnlineBank.Models.Account", "Account2")
+                        .WithMany()
+                        .HasForeignKey("Account2ID");
+
+                    b.Navigation("Account1");
+
+                    b.Navigation("Account2");
                 });
 #pragma warning restore 612, 618
         }

@@ -22,8 +22,8 @@ namespace OnlineBank.Models
 
         // receiver
         [ForeignKey("Account2")]
-        public int Account2ID { get; set; }
-        public Account Account2 { get; set; }
+        public int? Account2ID { get; set; }
+        public Account? Account2 { get; set; }
     }
 }
 

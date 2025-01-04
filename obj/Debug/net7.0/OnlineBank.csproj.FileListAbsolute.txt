@@ -49,4 +49,5 @@
 /Users/redahaloubi/Projects/OnlineBank/OnlineBank/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
 /Users/redahaloubi/Projects/OnlineBank/OnlineBank/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/redahaloubi/Projects/OnlineBank/OnlineBank/bin/Debug/net7.0/BCrypt.Net-Next.dll
-/Users/redahaloubi/Projects/OnlineBank/OnlineBank/obj/Debug/net7.0/OnlineBank.csproj.CopyComplete
+/Users/redahaloubi/Projects/OnlineBank/OnlineBank/obj/Debug/net7.0/OnlineBank.sourcelink.json
+/Users/redahaloubi/Projects/OnlineBank/OnlineBank/obj/Debug/net7.0/OnlineBank.csproj.Up2Date
