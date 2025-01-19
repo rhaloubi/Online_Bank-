@@ -18,12 +18,10 @@ namespace OnlineBank.Models
         // sender
         [ForeignKey("Account1")]
         public int? Account1ID { get; set; }
-        public Account? Account1 { get; set; }
 
         // receiver
         [ForeignKey("Account2")]
         public int? Account2ID { get; set; }
-        public Account? Account2 { get; set; }
     }
 }
 

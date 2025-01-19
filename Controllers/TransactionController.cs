@@ -93,6 +93,12 @@ public class TransactionController : ControllerBase
 
         var clientId = GetClientIdFromToken();
 
+        // Prevent transferring to self
+        if (clientId == targetClientId)
+        {
+            return BadRequest("You cannot transfer money to yourself.");
+        }
+
         // Get the source account associated with the current client
         var sourceAccount = await _context.Accounts.FirstOrDefaultAsync(a => a.ClientID == clientId);
         if (sourceAccount == null)
@@ -123,14 +129,18 @@ public class TransactionController : ControllerBase
             Account2ID = targetAccount.AccountID,
             Amount = amount,
             Date = DateTime.UtcNow,
-            Type = "Transfer "
+            Type = "Transfer"
         };
 
-
-        await _context.Transactions.AddRangeAsync(sourceTransaction);
+        await _context.Transactions.AddAsync(sourceTransaction);
         await _context.SaveChangesAsync();
 
-        return Ok(new { message = "Transfer successful", sourceBalance = sourceAccount.Balance, targetBalance = targetAccount.Balance });
+        return Ok(new
+        {
+            message = "Transfer successful",
+            sourceBalance = sourceAccount.Balance,
+            targetBalance = targetAccount.Balance
+        });
     }
 
     // Transaction
@@ -148,10 +158,10 @@ public class TransactionController : ControllerBase
             return NotFound("Account not found or not associated with the current client.");
         }
 
-        // Get all transactions associated with the account
+        // Get all transactions associated with the account, excluding those of type "Deposit"
         var transactionsOut = await _context.Transactions
-                                          .Where(t => t.Account1ID == account.AccountID)
-                                          .ToListAsync();
+                                              .Where(t => t.Account1ID == account.AccountID && t.Type != "Deposit")
+                                              .ToListAsync();
 
         if (transactionsOut == null || !transactionsOut.Any())
         {
@@ -160,6 +170,7 @@ public class TransactionController : ControllerBase
 
         return Ok(transactionsOut);
     }
+
 
 
     // Transaction
@@ -179,7 +190,7 @@ public class TransactionController : ControllerBase
 
         // Get all transactions associated with the account
         var transactionsIn = await _context.Transactions
-                                          .Where(t => t.Account2ID == account.AccountID)
+                                          .Where(t => t.Account2ID == account.AccountID || t.Type == "Deposit")
                                           .ToListAsync();
 
         if (transactionsIn == null || !transactionsIn.Any())
