@@ -1,0 +1,184 @@
+﻿@using Microsoft.JSInterop
+@inject NavigationManager Navigation
+@inject OnlineBank_FE.Services.AuthService AuthService
+@inject OnlineBank_FE.Services.ClientService ClientService
+@using OnlineBank_FE.Models
+
+<div class="fixed flex flex-col px-4 py-2 w-64 bg-gray-950 h-screen">
+    <div class="flex items-center px-6 h-20">
+        <h1 class="text-2xl font-bold">Online Bank</h1>
+    </div>
+    <nav class="mt-6 flex-grow">
+        <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
+            <svg class="w-5 h-5 mb-1 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-6 9 6v12a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+            </svg>
+            <a href="#" class="text-[18px]">Dashboard</a>
+        </li>
+        <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
+            <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
+            </svg>
+            <a href="#" class="text-[18px]">Transactions</a>
+        </li>
+        <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
+            <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
+            </svg>
+            <a href="#" class="text-[18px]">Payments</a>
+        </li>
+        <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
+            <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
+            </svg>
+            <a href="#" class="text-[18px]">Cards</a>
+        </li>
+        <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
+            <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
+            </svg>
+            <a href="#" class="text-[18px]">Credit</a>
+        </li>
+    </nav>
+
+    <!-- User Button -->
+    <div class="relative mt-auto">
+        <button class="flex items-center justify-between w-full px-5 py-3 rounded-[10px] text-gray-400" @onclick="ToggleUserDropdown">
+            <div class="flex items-center">
+                @if (client != null)
+                {
+                    <span class="text-left">@client.Name</span>
+                }
+                else
+                {
+                    <span class="text-left">Loading...</span>
+                }
+            </div>
+            <svg class="w-4 h-4 transition-transform duration-200 @(isUserDropdownOpen ? "rotate-180" : "")" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19l7-7-7-7" />
+            </svg>
+        </button>
+        @if (isUserDropdownOpen)
+        {
+            <div class="absolute left-0 w-full bg-gray-900 border border-gray-700 rounded-md shadow-lg z-10" style="bottom: 100%;">
+                <a href="#" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Documents</a>
+                <a href="#" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Offers</a>
+                <a @onclick="OpenDialog" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Settings</a>
+                <a @onclick="Logout" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Logout</a>
+            </div>
+        }
+    </div>
+
+    <!-- Dialog Modal -->
+    @if (IsDialogOpen)
+    {
+        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div class="bg-black rounded-lg shadow-md p-6 w-full max-w-lg">
+                <!-- Dialog Header -->
+                <div class="mb-4">
+                    <h2 class="text-xl font-semibold">Edit Profile</h2>
+                    <p class="text-sm text-gray-500">
+                        Make changes to your profile here. Click save when you're done.
+                    </p>
+                </div>
+
+                <!-- Dialog Content -->
+                <div class="grid gap-4">
+                    <!-- Name Field -->
+                    <div class="grid grid-cols-4 items-center gap-4">
+                        <label for="name" class="text-right text-lg font-medium text-gray-200">
+                            Name
+                        </label>
+                        <input id="name"
+                               type="text"
+                               @bind="client.Name"
+                               class="col-span-3 border border-gray-300 rounded-md px-3 py-2 bg-gray-800 text-gray-200 focus:outline-none focus:ring focus:ring-indigo-300" />
+                    </div>
+
+                    <!-- Username Field -->
+                    <div class="grid grid-cols-4 items-center gap-4">
+                        <label for="username" class="text-right text-lg font-medium text-gray-200">
+                            Gmail
+                        </label>
+                        <input id="username"
+                               type="text"
+                               @bind="client.Email"
+                               class="col-span-3 border border-gray-300 rounded-md px-3 py-2 text-gray-200 bg-gray-800 focus:outline-none focus:ring focus:ring-indigo-300" />
+                    </div>
+                </div>
+
+                <!-- Dialog Footer -->
+                <div class="mt-6 flex justify-end gap-2">
+                    <button class="px-4 py-2 text-sm font-medium text-gray-200 border border-gray-300 rounded-md hover:bg-gray-800"
+                            @onclick="CloseDialog">
+                        Cancel
+                    </button>
+                    <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700">
+                        Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+    
+</div>
+
+@code {
+    private bool isUserDropdownOpen = false;
+    private bool IsDialogOpen { get; set; } = false;
+    private Client? client;
+    private string? errorMessage;
+    private bool isLoading = true;
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            if (!await AuthService.IsLoggedInAsync())
+            {
+                Navigation.NavigateTo("/login");
+                return;
+            }
+
+            await AuthService.InitializeAuth(); // Ensure token is set on refresh
+
+            client = await ClientService.GetClientDetailsAsync();
+
+            if (client == null )
+            {
+                errorMessage = "Failed to load client or account details.";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"An error occurred: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void ToggleUserDropdown()
+    {
+        isUserDropdownOpen = !isUserDropdownOpen;
+    }
+
+    private async Task Logout()
+    {
+        await AuthService.LogoutAsync();
+        Navigation.NavigateTo("/login");
+    }
+    // Methods to handle dialog state
+    private void OpenDialog()
+    {
+        IsDialogOpen = true;
+    }
+
+    private void CloseDialog()
+    {
+        IsDialogOpen = false;
+    }
+    }

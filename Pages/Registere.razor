@@ -1,0 +1,110 @@
+﻿@page "/register"
+@inject OnlineBank_FE.Services.AuthService AuthService
+@inject NavigationManager Navigation
+@using OnlineBank_FE.Models
+
+@using Microsoft.AspNetCore.Components.Forms
+
+<body class="bg-black">
+    <div class="flex flex-col md:flex-row sm:h-screen md:mb-11">
+        <!-- Left Section -->
+        <div class="relative md:w-1/2 flex flex-col text-center justify-center items-start p-8 md:p-[70px] sm:h-full text-white h-[50vh]">
+            <img src="/img/lvImg.jpg"
+                 class="absolute inset-0 w-full h-full object-cover opacity-75" />
+            <div class="relative z-10">
+                <h2 class="text-xl text-left md:text-[35px] font-bold mb-[-10px] md:mb-[-4px] text-yellow-400"
+                    style="font-family: 'Dancing Script', cursive;">
+                    Sign Up
+                </h2>
+                <h1 class="text-[80px] text-white md:text-[120px] font-bold">
+                    Create an Account
+                </h1>
+                <p class="mt-4 text-white text-xl">
+                    Create an account to get started on your journey.
+
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="md:w-1/2 w-full h-[80vh] sm:h-full flex flex-col justify-center p-8 md:p-12 bg-black">
+            <EditForm Model="Client" OnValidSubmit="HandleRegister" class="space-y-6 w-full">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <h2 class="text-[50px] text-center font-bold md:text-[60px] mb-[50px] text-white">YOUR ACCOUNT</h2>
+                <p class="text-red-500 text-center">@errorMessage</p>
+
+                <!-- Name Input -->
+                <div class="mb-4">
+                    <label class="block text-white text-xl font-bold mb-2">First Name</label>
+                    <InputText @bind-Value="Client.Name"
+                               class="shadow appearance-none border-b border-r text-xl border-yellow-300 rounded w-full bg-black py-1 px-1 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                               placeholder="Enter your name"
+                               type="text"
+                               required />
+                </div>
+                <!-- Email Input -->
+                <div class="mb-4">
+                    <label class="block text-white text-xl font-bold mb-2">Email</label>
+                    <InputText @bind-Value="Client.Email"
+                               class="shadow appearance-none border-b border-r text-xl border-yellow-300 rounded w-full bg-black py-1 px-1 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                               placeholder="Enter your email"
+                               type="email"
+                               required />
+                </div>
+
+                <!-- Password Input -->
+                <div class="mb-6 relative">
+                    <label class="block text-white text-xl font-bold mb-2">Password</label>
+                    <InputText @bind-Value="Client.Password"
+                               class="shadow appearance-none border-b border-r md:py-3 text-xl border-yellow-300 rounded w-full bg-black py-1 px-1 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                               placeholder="Enter your password"
+                               type="password"
+                               required />
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex items-center justify-between">
+                    <button type="submit"
+                            class="bg-yellow-400 hover:bg-green-500 text-black font-bold py-2 px-8 md:px-6 rounded focus:outline-none focus:shadow-outline">
+                        <span class="text-[23px]">LOG IN</span>
+                    </button>
+                </div>
+            </EditForm>
+
+            <!-- Additional Links -->
+            <div class="mt-6 pt-5 md:mt-[100px] flex justify-between border-t border-slate-400 text-slate-400 font-bold">
+                <div class="hover:underline text-[17px] md:text-[20px]">
+                    <span>Already have an account?</span>
+                </div>
+                <NavLink href="/login" class="hover:underline text-[17px] md:text-[20px]">
+                    <span>BACK TO LOGIN</span>
+                </NavLink>
+</div>
+        </div>
+    </div>
+</body>
+
+@code {
+    private Client Client = new Client();
+    private string? errorMessage;
+
+    private async Task HandleRegister()
+    {
+        bool success = await AuthService.RegisterAsync(Client);
+
+        if (success)
+        {
+            errorMessage = null;
+            Navigation.NavigateTo("/login"); // Redirect to dashboard
+        }
+        else
+        {
+            errorMessage = "Invalid register attempt.";
+        }
+    }
+
+
+
+
+}

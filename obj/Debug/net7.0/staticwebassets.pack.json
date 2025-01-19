@@ -5,7 +5,7 @@
       "PackagePath": "staticwebassets/_framework/blazor.webassembly.js"
     },
     {
-      "Id": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/eu4llUGU.gz",
+      "Id": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/GZiCtfuf.gz",
       "PackagePath": "staticwebassets/_framework/blazor.webassembly.js.gz"
     },
     {
@@ -179,6 +179,10 @@
     {
       "Id": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
     },
     {
       "Id": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/wwwroot/sample-data/weather.json",

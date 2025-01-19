@@ -13,5 +13,10 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https:/
 // Register AuthService
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<ClientService>();
+builder.Services.AddScoped<AccountService>();
+builder.Services.AddScoped<TransactionService>();
+
+
 
 await builder.Build().RunAsync();

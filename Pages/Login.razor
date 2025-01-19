@@ -9,8 +9,7 @@
     <div class="flex flex-col md:flex-row sm:h-screen md:mb-11">
         <!-- Left Section -->
         <div class="relative md:w-1/2 flex flex-col text-center justify-center items-start p-8 md:p-[70px] sm:h-full text-white h-[50vh]">
-            <img src="../wwwroot/img/gucciImg.jpg"
-                 alt="Background"
+            <img src="/img/gucciImg.jpg" 
                  class="absolute inset-0 w-full h-full object-cover opacity-75" />
             <div class="relative z-10">
                 <h2 class="text-xl text-left md:text-[35px] font-bold mb-[-10px] md:mb-[-4px] text-yellow-400"
@@ -26,7 +25,7 @@
 
         <!-- Right Section -->
         <div class="md:w-1/2 w-full h-[80vh] sm:h-full flex flex-col justify-center p-8 md:p-12 bg-black">
-            <EditForm Model="loginRequest" OnValidSubmit="HandleLogin" class="space-y-6 w-full">
+            <EditForm Model="Client" OnValidSubmit="HandleLogin" class="space-y-6 w-full">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
                 <h2 class="text-[50px] text-center font-bold md:text-[60px] mb-[50px] text-white">YOUR ACCOUNT</h2>
@@ -35,8 +34,8 @@
                 <!-- Email Input -->
                 <div class="mb-4">
                     <label class="block text-white text-xl font-bold mb-2">Email</label>
-                    <InputText @bind-Value="loginRequest.Email"
-                               class="shadow appearance-none border-b border-r text-xl border-yellow-300 rounded w-full bg-black py-5 md:py-1 px-1 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    <InputText @bind-Value="Client.Email"
+                               class="shadow appearance-none border-b border-r text-xl border-yellow-300 rounded w-full bg-black py-1 px-1 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline"
                                placeholder="Enter your email"
                                type="email"
                                required />
@@ -45,8 +44,8 @@
                 <!-- Password Input -->
                 <div class="mb-6 relative">
                     <label class="block text-white text-xl font-bold mb-2">Password</label>
-                    <InputText @bind-Value="loginRequest.Password"
-                               class="shadow appearance-none border-b border-r md:py-3 text-xl border-yellow-300 rounded w-full bg-black py-5 md:py-1 px-1 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    <InputText @bind-Value="Client.Password"
+                               class="shadow appearance-none border-b border-r md:py-3 text-xl border-yellow-300 rounded w-full bg-black py-1 px-1 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline"
                                placeholder="Enter your password"
                                type="password"
                                required />
@@ -66,21 +65,22 @@
                 <button type="button" class="hover:underline text-[17px] md:text-[20px]">
                     <span>FORGOTTEN PASSWORD?</span>
                 </button>
-                <button type="button" class="hover:underline text-[17px] md:text-[20px]" >
+                <NavLink href="/register" class="hover:underline text-[17px] md:text-[20px]">
                     <span>CREATE AN ACCOUNT</span>
-                </button>
+                </NavLink>
+
             </div>
         </div>
     </div>
 </body>
 
 @code {
-    private LoginRequest loginRequest = new LoginRequest();
+    private Client Client = new Client();
     private string? errorMessage;
 
     private async Task HandleLogin()
     {
-        bool success = await AuthService.LoginAsync(loginRequest);
+        bool success = await AuthService.LoginAsync(Client);
 
         if (success)
         {

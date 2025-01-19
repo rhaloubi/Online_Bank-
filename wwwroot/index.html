@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body class="bg-black text-white">
     <div id="app">
         <svg class="loading-progress">
             <circle r="40%" cx="50%" cy="50%" />
@@ -27,12 +27,54 @@
         <div class="loading-progress-text"></div>
     </div>
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script>function initializeBarChart(chartId, labels, data) {
+            const ctx = document.getElementById(chartId).getContext('2d');
+            const barChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Account Balance',
+                        data: data,
+                        backgroundColor: 'rgba(107, 33, 168, 0.5)',
+                        borderColor: 'rgba(107, 33, 168, 1)',
+                        borderWidth: 4,
+                        pointBorderWidth: 4, // Also increasing the border for data points
+                        pointRadius: 5,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#4a5568', // gray-700 color in Hex format for the Y-axis labels
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Date',
+                                color: 'white'
+                            },
+                            ticks: {
+                                color: 'white' // Change color of x-axis labels
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'white', // Change color of legend labels
+                            }
+                        }
+                    }
+                }
+            });
+        }</script>
+
 </body>
 
 </html>

@@ -1,218 +1,251 @@
 ﻿@page "/dashboard"
-@using System.Globalization
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
 @inject NavigationManager Navigation
 @inject OnlineBank_FE.Services.AuthService AuthService
+@inject OnlineBank_FE.Services.ClientService ClientService
+@inject OnlineBank_FE.Services.AccountService AccountService
+@inject OnlineBank_FE.Services.TransactionService TransactionService
 
-<body class="bg-gray-900 text-white">
-    <div class="flex">
-        <!-- Sidebar -->
-        <aside class="fixed flex flex-col px-4 py-2 w-64 bg-gray-950 h-screen">
-            <div class="flex items-center px-6 h-20">
-                <h1 class="text-2xl font-bold">Online Bank</h1>
+@using OnlineBank_FE.Models
+
+<div class="flex bg-gray-900">
+    <!-- Sidebar -->
+    <Sidebar />
+
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4 px-16 ml-64">
+
+        <header class="flex justify-between items-center bg-gray-900 relative inline-block text-left mb-6 relative text-white">
+            <button class="bg-purple-600 px-6 py-3 rounded-full ml-auto flex items-center" @onclick="ToggleDropdown">
+                <span>Move Money</span>
+                <svg class="w-4 h-4 ml-2 transform transition-transform duration-200 @(isDropdownOpen ? "rotate-180" : "")" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                </svg>
+            </button>
+            @if (isDropdownOpen)
+            {
+                <div class="absolute right-0 z-10 mt-[230px] w-52 bg-gray-900 border border-gray-700 rounded-md shadow-lg">
+                    <div class="py-1" role="menu" aria-orientation="vertical">
+                        <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md text-gray-100 hover:bg-gray-600" role="menuitem">Send</a>
+                        <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md text-gray-100 hover:bg-gray-600" role="menuitem">Receive</a>
+                        <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md text-gray-100 hover:bg-gray-600" role="menuitem">Cards</a>
+                        <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md text-gray-100 hover:bg-gray-600" role="menuitem">Accounts</a>
+                    </div>
+                </div>
+            }
+        </header>
+
+        <div class="grid grid-cols-5 gap-6">
+            <!-- Account Info Card -->
+            <div class="bg-gray-950 p-9 rounded-lg border border-slate-800	 col-span-2">
+                <h3 class="text-xl text-gray-500 pb-[40px]"><span>@client.Name</span>'s ACCOUNT</h3>
+                <h2 class="text-[60px] pb-[32px]">Welcome back, @client.Name ! 👋</h2>
+                <p class="text-[18px] mt-2 text-gray-500 pb-[40px]">Everything seems ok and up-to-date with your account since your last visit. Would you like to fund it?</p>
+                <button class="bg-purple-600 hover:bg-purple-700 px-11 py-3 rounded-full items-center mt-auto">
+                    <span class="text-[18px]">Fund my Account</span>
+                </button>
             </div>
-            <nav class="mt-6 flex-grow">
-                <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
-                    <svg class="w-5 h-5 mb-1 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-6 9 6v12a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                    </svg>
-                    <a href="#" class="text-[18px]">Dashboard</a>
-                </li>
-                <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
-                    <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
-                    </svg>
-                    <a href="#" class="text-[18px]">Transactions</a>
-                </li>
-                <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
-                    <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
-                    </svg>
-                    <a href="#" class="text-[18px]">Payments</a>
-                </li>
-                <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
-                    <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
-                    </svg>
-                    <a href="#" class="text-[18px]">Cards</a>
-                </li>
-                <li class="my-2 py-3 mx-1 px-5 flex items-center rounded-[10px] hover:bg-gray-600 text-gray-400 hover:text-gray-200">
-                    <svg class="w-5 h-5 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18M3 12h18M3 21h18" />
-                    </svg>
-                    <a href="#" class="text-[18px]">Credit</a>
-                </li>
-            </nav>
 
-            <!-- User Button -->
-            <div class="relative mt-auto">
-                <button class="flex items-center justify-between w-full px-5 py-3 rounded-[10px] text-gray-400 " id="userButton">
-                    <div class="flex items-center">
-                        <svg class="w-10 h-10 rounded-full bg-gray-700 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <circle cx="12" cy="12" r="10" />
+            <!-- Chart Card -->
+            <div class="bg-gray-950 p-4 rounded-lg border border-slate-800	col-span-3">
+                <h2 class="text-xl text-center pt-3 text-gray-500">Account Balance</h2>
+                <p class="text-4xl mt-2 text-center">$ @account.Balance.ToString("F2") </p>
+                @if (lastdaytrs > 0)
+                {
+                    <p class="text-sm text-green-500 text-center">+$ @lastdaytrs.ToString("F2") Today, @DateTime.Now.ToString("dd MMM", new System.Globalization.CultureInfo("fr-FR"))</p>
+                }
+                else if (lastdaytrs < 0)
+                {
+            <p class="text-sm text-red-500 text-center">-$ @lastdaytrs.ToString("F2") Today, @DateTime.Now.ToString("dd MMM", new System.Globalization.CultureInfo("fr-FR"))</p>
+                }
+                else
+                {
+            <p class="text-sm text-gray-500 text-center">$0.00 Today, @DateTime.Now.ToString("dd MMM", new System.Globalization.CultureInfo("fr-FR"))</p>
+                }
+
+                <canvas id="balanceChart" class="mt-4"></canvas>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6 mt-6">
+            <!-- Money Out Last 30 Days -->
+            <div class="px-[45px] py-[55px] border border-slate-800 rounded-lg">
+                <h3 class="text-[30px] text-gray-500">MONEY OUT LAST 30 DAYS</h3>
+                <p class="text-[40px] mt-6 mb-6">$ @Outlast30DaysTotal.ToString("F2")</p>
+                <p class="text-md text-gray-600 pb-1 border-b-[2px] mb-8 border-gray-600">
+                    @if (Outlast30DaysTotal > 0)
+                    {
+                        <span>Here's the total for the last 30 days.</span>
+                    }
+                    else
+                    {
+                        <span>No incoming transactions yet.</span>
+                    }
+                </p>
+                <div class="flex justify-end">
+                    <button class="flex group inline-flex items-center gap-3 text-purple-600 hover:text-purple-400 transition-colors duration-300">
+                        <span class="hover:translate-x text-[20px] transition-transform duration-200">View All</span>
+                        <svg class="iconify w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7" />
                         </svg>
-                        <span class="text-left">Mara C.</span>
-                    </div>
-                    <svg id="dropdownIcon2" class="w-4 h-4 transition-transform duration-200 rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19l7-7-7-7" />
-                    </svg>
-                </button>
-                <div id="userDropdown" class="hidden absolute left-0 w-full bg-gray-900 border border-gray-700 rounded-md shadow-lg z-10" style="bottom: 100%;">
-                    <a href="#" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Documents</a>
-                    <a href="#" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Offers</a>
-                    <a href="#" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Settings</a>
-                    <a href="#" class="block px-4 py-2 text-gray-100 hover:bg-gray-600">Logout</a>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <div class="flex-1 p-4 px-16 ml-64">
-            <header class="flex justify-between items-center relative inline-block text-left mb-6 relative bg-gray-900 text-white">
-                <button class="bg-purple-600 px-6 py-3 rounded-full ml-auto flex items-center" id="dropdownButton">
-                    <span>Move Money</span>
-                    <svg id="dropdownIcon" class="w-4 h-4 ml-2 transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
-                    </svg>
-                </button>
-                <div class="relative inline-block text-left">
-                    <div id="dropdownMenu" class="hidden absolute right-0 z-10 mt-8 w-52 bg-gray-900 border border-gray-700 rounded-md shadow-lg ">
-                        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="dropdownButton">
-                            <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md  text-gray-100 hover:bg-gray-600" role="menuitem">
-                                <span class="flex items-center">
-                                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z" />
-                                    </svg>
-                                    Send
-                                </span>
-                                <span class=" text-[12px] px-[24px] text-gray-500">Send someone money</span>
-                            </a>
-
-                            <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md  text-gray-100 hover:bg-gray-600" role="menuitem">
-                                <span class="flex items-center">
-                                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z" />
-                                    </svg>
-                                    Receive
-                                </span>
-                                <span class=" text-[12px] px-[24px] text-gray-500">Add or receive funds</span>
-                            </a>
-
-                            <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md  text-gray-100 hover:bg-gray-600" role="menuitem">
-                                <span class="flex items-center">
-                                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z" />
-                                    </svg>
-                                    Cards
-                                </span>
-                                <span class=" text-[12px] px-[24px] text-gray-500">Manage your cards</span>
-                            </a>
-
-                            <a href="#" class="flex flex-col mx-2 px-2 my-1 py-1 rounded-md  text-gray-100 hover:bg-gray-600" role="menuitem">
-                                <span class="flex items-center">
-                                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z" />
-                                    </svg>
-                                    Accounts
-                                </span>
-                                <span class=" text-[12px] px-[24px] text-gray-500">Manage your accounts</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <div class="grid grid-cols-5 gap-6">
-                <!-- Account Info Card -->
-                <div class="bg-gray-950 p-9 rounded-lg  border border-gray-800  col-span-2">
-                    <h3 class="text-xl text-gray-500 pb-[40px]">MARA'S ACCOUNT</h3>
-                    <h2 class="text-[60px] pb-[32px]">Welcome back, Mara! 👋</h2>
-                    <p class="text-[18px] mt-2 text-gray-500 pb-[40px]">
-                        Everything seems ok and up-to-date with your account since your last visit. Would you like to fund it?
-                    </p>
-                    <button class="bg-purple-600 hover:bg-purple-700 px-11 py-3 rounded-full items-center mt-auto">
-                        <span class="text-[18px]">Fund my Account</span>
                     </button>
-
-                </div>
-
-                <!-- Chart Card -->
-                <div class="bg-gray-950 p-4 rounded-lg  border border-gray-800  col-span-3">
-                    <h2 class="text-xl text-center pt-3 text-gray-500">
-                        Account Balance
-                    </h2>
-                    <p class="text-4xl mt-2 text-center">$ 9,543.12</p>
-                    <p class="text-sm text-gray-500 text-center">+$149.32 Today, Sep 25</p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-6 mt-6">
-                <!-- Money Out Last 30 Days -->
-                <div class="bg-gray-950 px-[45px] py-[55px] border border-gray-800 rounded-lg">
-                    <h3 class="text-[30px] text-gray-500 ">MONEY OUT LAST 30 DAYS</h3>
-                    <p class="text-[40px] mt-6 mb-6">$0.00</p>
-                    <p class="text-md text-gray-600 pb-1 border-b-[2px] mb-8 border-gray-600">No outgoing transactions yet</p>
-                    <div class="flex justify-end">
-                        <button class="flex group inline-flex items-center gap-3 text-purple-600 hover:text-purple-400 transition-colors duration-300">
-                            <span class="hover:translate-x text-[20px] transition-transform duration-200">View All</span>
-                            <svg class="iconify w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
 
-                <!-- Money In Last 30 Days -->
-                <div class="bg-gray-950 px-[45px] py-[55px]  border border-gray-800 rounded-lg">
-                    <h3 class="text-[30px] text-gray-500">MONEY IN LAST 30 DAYS</h3>
-                    <p class="text-[40px] mt-6 mb-6">$0.00</p>
-                    <p class="text-md text-gray-600 pb-1 border-b-[2px] mb-8 border-gray-600">No incoming transactions yet</p>
-                    <div class="flex justify-end">
-                        <button class="flex group inline-flex items-center gap-3 text-purple-600 hover:text-purple-400 transition-colors duration-300">
-                            <span class="hover:translate-x text-[20px] transition-transform duration-200">View All</span>
-                            <svg class="iconify w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7" />
-                            </svg>
-                        </button>
-                    </div>
+
+            <!-- Money In Last 30 Days -->
+            <div class=" px-[45px] py-[55px] border border-slate-800	 rounded-lg">
+                <h3 class="text-[30px] text-gray-500">MONEY IN LAST 30 DAYS</h3>
+                <p class="text-[40px] mt-6 mb-6">$ @Inlast30DaysTotal.ToString("F2")</p>
+                <p class="text-md text-gray-600 pb-1 border-b-[2px] mb-8 border-gray-600">No incoming transactions yet</p>
+                <div class="flex justify-end">
+                    <button class="flex group inline-flex items-center gap-3 text-purple-600 hover:text-purple-400 transition-colors duration-300">
+                        <span class="hover:translate-x text-[20px] transition-transform duration-200">View All</span>
+                        <svg class="iconify w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
 
-
-</body>
+    </main>
+</div>
 @code {
-    private bool isUserDropdownVisible = false;
-    private string userDropdownClass => isUserDropdownVisible ? "rotate-180" : "";
-    private string userDropdownVisibility => isUserDropdownVisible ? "block" : "hidden";
+    private bool isDropdownOpen = false;
 
-    private bool isMoveMoneyDropdownVisible = false;
-    private string moveMoneyDropdownClass => isMoveMoneyDropdownVisible ? "rotate-180" : "";
-    private string moveMoneyDropdownVisibility => isMoveMoneyDropdownVisible ? "block" : "hidden";
+    // These lists will be populated dynamically for the last 6 days
+    private List<string> labels = new List<string>(); // Day and month (e.g., "20 Sep")
+    private List<decimal> data = new List<decimal>(); // Now it stores decimal values
 
-    private void ToggleUserDropdown()
+    private bool isLoading = true;
+    private Client? client;
+    private Account? account;
+    private List<Transaction>? transactionOut;
+    private List<Transaction>? transactionIn;
+    private string? errorMessage;
+    private decimal Outlast30DaysTotal = 0;
+    private decimal Inlast30DaysTotal = 0;
+    private decimal lastdaytrs = 0;
+
+    private void ToggleDropdown()
     {
-        isUserDropdownVisible = !isUserDropdownVisible;
+        isDropdownOpen = !isDropdownOpen;
     }
 
-    private void ToggleMoveMoneyDropdown()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        isMoveMoneyDropdownVisible = !isMoveMoneyDropdownVisible;
-    }
-
-        protected override void OnInitialized()
+        if (firstRender)
         {
-            // Redirect to login if not authenticated
-            if (!AuthService.IsLoggedIn)
+            // Initialize the chart once the component is rendered
+            await InitializeChart();
+        }
+    }
+
+    private async Task InitializeChart()
+    {
+        try
+        {
+            // Initialize the bar chart using JavaScript interop
+            await JSRuntime.InvokeVoidAsync("initializeBarChart", "balanceChart", labels, data);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error initializing chart: {ex.Message}");
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        isLoading = true; // Set loading state to true at the start
+
+        try
+        {
+            // Ensure the user is logged in
+            if (!await AuthService.IsLoggedInAsync())
             {
                 Navigation.NavigateTo("/login");
+                return;
             }
-        }
 
-        private void Logout()
+            // Initialize token if not already set
+            await AuthService.InitializeAuth();
+
+            // Fetch client details, account balance, and transactions
+            client = await ClientService.GetClientDetailsAsync();
+            account = await AccountService.GetBalanceAsync();
+            transactionOut = await TransactionService.GetTransactionsOutAsync() ?? new List<Transaction>();
+            transactionIn = await TransactionService.GetTransactionsInAsync() ?? new List<Transaction>();
+
+            // Handle failure to load essential data
+            if (client == null || account == null || transactionOut == null || transactionIn == null)
+            {
+                errorMessage = "Failed to load client or account details.";
+                return;
+            }
+
+            // Calculate total transaction amounts for the last 30 days for both outgoing and incoming transactions
+            Outlast30DaysTotal = GetTotalTransactionAmount(transactionOut);
+            Inlast30DaysTotal = GetTotalTransactionAmount(transactionIn);
+            decimal lastdaytrsIn = Getlastday(transactionIn);
+            decimal lastdaytrsOut = Getlastday(transactionOut);
+
+            lastdaytrs = lastdaytrsIn - lastdaytrsOut;
+            // Fetch transaction data for the last 6 days
+            GetTransactionDataForLast6Days();
+        }
+        catch (Exception ex)
         {
-            AuthService.LogoutAsync();
-            Navigation.NavigateTo("/login");
+            // Log any exceptions and display an error message
+            errorMessage = $"An error occurred: {ex.Message}";
         }
+        finally
+        {
+            isLoading = false; // Set loading state to false once the operation is complete
+        }
+    }
 
+    private decimal GetTotalTransactionAmount(List<Transaction> transactions)
+    {
+        return transactions.Sum(t => t.Amount);
+    }
+
+    private decimal Getlastday(List<Transaction> transactions)
+    {
+        // Return net sum for today (last 24 hours)
+        DateTime today = DateTime.UtcNow.Date;
+        return transactions
+            .Where(t => t.Date.Date == today)
+            .Sum(t => t.Amount);
+    }
+
+    private void GetTransactionDataForLast6Days()
+    {
+        // Collect the last 6 days and their transaction sums
+        labels.Clear();
+        data.Clear();
+
+        for (int i = 5; i >= 0; i--)
+        {
+            DateTime day = DateTime.UtcNow.AddDays(-i);
+            string label = day.ToString("dd MMM");
+            labels.Add(label);
+
+            decimal dayTotalOut = GetTransactionTotalForDate(transactionOut, day);
+            decimal dayTotalIn = GetTransactionTotalForDate(transactionIn, day);
+
+            // Net difference for the day
+            data.Add(dayTotalIn - dayTotalOut);
+        }
+    }
+
+    private decimal GetTransactionTotalForDate(List<Transaction> transactions, DateTime date)
+    {
+        return transactions
+            .Where(t => t.Date.Date == date.Date)
+            .Sum(t => t.Amount);
+    }
 }
