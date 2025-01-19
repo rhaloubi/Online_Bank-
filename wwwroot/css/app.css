@@ -7,6 +7,9 @@
     font-display: swap;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
 @font-face {
     font-family: 'Formula Condensed';
     src: url('open-iconic/font/fonts/FormulaCondensed-Bold.woff2') format('woff2'), url('open-iconic/font/fonts/FormulaCondensed-Bold.woff') format('woff'), url('open-iconic/font/fonts/FormulaCondensed-Bold.ttf') format('ttf');

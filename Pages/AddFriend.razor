@@ -1,0 +1,202 @@
+﻿@page "/addfriends"
+
+@using Microsoft.AspNetCore.Components
+@inject NavigationManager Navigation
+@inject OnlineBank_FE.Services.AuthService AuthService
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+
+    .glow-effect {
+        position: absolute;
+        width: 500px;
+        height: 200px;
+        background: rgb(168, 85, 247);
+        filter: blur(100px);
+        opacity: 0.4;
+        transform: rotate(-45deg);
+        pointer-events: none;
+        animation: float 8s ease-in-out infinite;
+    }
+
+    @@keyframes float {
+        0%, 100% {
+            transform: rotate(-45deg) translateY(0);
+        }
+
+        50% {
+            transform: rotate(-45deg) translateY(-20px);
+        }
+    }
+
+    .dot-grid {
+        background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+</style>
+
+<div class="text-white bg-black dot-grid">
+    <Sidebar />
+
+    <main class="flex-1 pt-32 relative overflow-hidden ml-64">
+        <div class="glow-effect top-1/3 right-1/4"></div>
+
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-center mb-12">
+                Add Bank Friends
+            </h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Add Friend Section -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 space-y-6">
+                    <h2 class="text-2xl font-semibold mb-4">Add a New Friend</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="friendName" class="block text-sm font-medium text-white/60 mb-1">Friend's Name</label>
+                            <input type="text" id="friendName" placeholder="Enter friend's name" class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 text-white placeholder-white/40" @bind="friendName">
+                        </div>
+                        <div>
+                            <label for="accountNumber" class="block text-sm font-medium text-white/60 mb-1">Account Number</label>
+                            <input type="text" id="accountNumber" placeholder="Enter account number" class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 text-white placeholder-white/40" @bind="accountNumber">
+                        </div>
+                        <button class="w-full px-4 py-2 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-colors flex items-center justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Add Friend</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Invitations Section -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+                    <h2 class="text-2xl font-semibold mb-6">Invitation Requests</h2>
+                    <div class="space-y-4">
+
+                        @foreach (var request in invitationRequests)
+                        {
+                            <div class="flex items-center justify-between p-4 bg-white/10 rounded-lg">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-xl font-bold">
+                                        @request.Name[0]
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold">@request.Name</h3>
+                                        <p class="text-sm text-white/60">Account: @request.AccountNumber</p>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button @onclick="() => AcceptRequest(request)" class="px-3 py-1 bg-green-500 text-white rounded-md text-sm font-medium hover:bg-green-600 transition-colors">
+                                        Accept
+                                    </button>
+                                    <button @onclick="() => DeclineRequest(request)" class="px-3 py-1 bg-red-500 text-white rounded-md text-sm font-medium hover:bg-red-600 transition-colors">
+                                        Decline
+                                    </button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Your Bank Friends Section -->
+            <div class="mt-8 bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+                <h2 class="text-2xl font-semibold mb-6">Your Bank Friends</h2>
+                <div class="space-y-4">
+                    @foreach (var friend in bankFriends)
+                    {
+                        <div class="flex items-center justify-between p-4 bg-white/10 rounded-lg">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-xl font-bold">
+                                    @friend.Name[0]
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold">@friend.Name</h3>
+                                    <p class="text-sm text-white/60">Account: @friend.AccountNumber</p>
+                                </div>
+                            </div>
+                            <button class="px-3 py-1 bg-blue-500 text-white rounded-md text-sm font-medium hover:bg-blue-600 transition-colors flex items-center space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z" />
+                                </svg>
+                                <span>Transaction</span>
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 mt-20">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-center text-white/40 text-sm">
+                © 2024 SeleFni. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</div>
+
+@code {
+    private string? friendName;
+    private string? accountNumber;
+    private string? errorMessage;
+
+
+    private List<InvitationRequest> invitationRequests = new()
+{
+        new InvitationRequest { Name = "Charlie Brown", AccountNumber = "1122334455" },
+        new InvitationRequest { Name = "Diana Prince", AccountNumber = "5544332211" }
+    };
+
+    private List<BankFriend> bankFriends = new()
+{
+        new BankFriend { Name = "Alice Johnson", AccountNumber = "1234567890" },
+        new BankFriend { Name = "Bob Smith", AccountNumber = "0987654321" }
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        try
+        {
+            // Ensure the user is logged in
+            if (!await AuthService.IsLoggedInAsync())
+            {
+                Navigation.NavigateTo("/login");
+                return;
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log any exceptions and display an error message
+            errorMessage = $"An error occurred: {ex.Message}";
+        }
+    }
+
+    private void AcceptRequest(InvitationRequest request)
+    {
+        // Logic to accept invitation
+    }
+
+    private void DeclineRequest(InvitationRequest request)
+    {
+        // Logic to decline invitation
+    }
+
+    public class InvitationRequest
+    {
+        public string Name { get; set; }
+        public string AccountNumber { get; set; }
+    }
+
+    public class BankFriend
+    {
+        public string Name { get; set; }
+        public string AccountNumber { get; set; }
+    }
+}
