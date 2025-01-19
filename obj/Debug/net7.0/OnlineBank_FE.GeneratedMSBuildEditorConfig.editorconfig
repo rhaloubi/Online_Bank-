@@ -28,12 +28,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Pages/LandingPage.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGFuZGluZ1BhZ2UucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Pages/Registere.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0ZXJlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Pages/Transfer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVHJhbnNmZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Shared/Profile.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1Byb2ZpbGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Shared/Sidebar.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1NpZGViYXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/Shared/SurveyPrompt.razor]

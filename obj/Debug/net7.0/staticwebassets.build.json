@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fh+71s9yCFxRKr7dfcC2ztWVe2bhT3umHQRZw5Hn9fM=",
+  "Hash": "g7TST5oXdXKuq3f9qI5ckqBAu7fzO+2A1VDK6mnvH58=",
   "Source": "OnlineBank_FE",
   "BasePath": "/",
   "Mode": "Root",
@@ -48,7 +48,7 @@
       "AssetTraitValue": "boot",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.components.webassembly/7.0.20/build/net7.0/blazor.webassembly.js"
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.components.webassembly/7.0.5/build/net7.0/blazor.webassembly.js"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Blazored.LocalStorage.dll",
@@ -201,7 +201,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.authorization/7.0.20/lib/net7.0/Microsoft.AspNetCore.Authorization.dll"
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.authorization/7.0.5/lib/net7.0/Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.dll",
@@ -218,7 +218,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.components/7.0.20/lib/net7.0/Microsoft.AspNetCore.Components.dll"
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.components/7.0.5/lib/net7.0/Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll",
@@ -235,7 +235,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.components.forms/7.0.20/lib/net7.0/Microsoft.AspNetCore.Components.Forms.dll"
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.components.forms/7.0.5/lib/net7.0/Microsoft.AspNetCore.Components.Forms.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll",
@@ -252,7 +252,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.components.web/7.0.20/lib/net7.0/Microsoft.AspNetCore.Components.Web.dll"
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.components.web/7.0.5/lib/net7.0/Microsoft.AspNetCore.Components.Web.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.WebAssembly.dll",
@@ -269,7 +269,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.components.webassembly/7.0.20/lib/net7.0/Microsoft.AspNetCore.Components.WebAssembly.dll"
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.components.webassembly/7.0.5/lib/net7.0/Microsoft.AspNetCore.Components.WebAssembly.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Metadata.dll",
@@ -286,7 +286,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.metadata/7.0.20/lib/net7.0/Microsoft.AspNetCore.Metadata.dll"
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.aspnetcore.metadata/7.0.5/lib/net7.0/Microsoft.AspNetCore.Metadata.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Bcl.AsyncInterfaces.dll",
@@ -304,6 +304,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.bcl.asyncinterfaces/9.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Bcl.TimeProvider.dll",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Bcl.TimeProvider.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.bcl.timeprovider/8.0.1/lib/netstandard2.0/Microsoft.Bcl.TimeProvider.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.CSharp.dll",
@@ -507,7 +524,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.1/lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll"
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.0/lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Logging.dll",
@@ -561,6 +578,74 @@
       "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.extensions.primitives/7.0.0/lib/net7.0/Microsoft.Extensions.Primitives.dll"
     },
     {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.Abstractions.dll",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Abstractions.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.identitymodel.abstractions/8.3.0/lib/net6.0/Microsoft.IdentityModel.Abstractions.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.JsonWebTokens.dll",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.JsonWebTokens.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.3.0/lib/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.Logging.dll",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Logging.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.identitymodel.logging/8.3.0/lib/net6.0/Microsoft.IdentityModel.Logging.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.Tokens.dll",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Tokens.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.identitymodel.tokens/8.3.0/lib/net6.0/Microsoft.IdentityModel.Tokens.dll"
+    },
+    {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.dll",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
@@ -575,7 +660,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.jsinterop/7.0.20/lib/net7.0/Microsoft.JSInterop.dll"
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.jsinterop/7.0.5/lib/net7.0/Microsoft.JSInterop.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.WebAssembly.dll",
@@ -592,7 +677,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.jsinterop.webassembly/7.0.20/lib/net7.0/Microsoft.JSInterop.WebAssembly.dll"
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/microsoft.jsinterop.webassembly/7.0.5/lib/net7.0/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.VisualBasic.Core.dll",
@@ -1375,6 +1460,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Runtime.Mono.browser-wasm/7.0.20/runtimes/browser-wasm/lib/net7.0/System.Globalization.Extensions.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.IdentityModel.Tokens.Jwt.dll",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.IdentityModel.Tokens.Jwt.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/.nuget/packages/system.identitymodel.tokens.jwt/8.3.0/lib/net6.0/System.IdentityModel.Tokens.Jwt.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.IO.Compression.Brotli.dll",
@@ -3519,23 +3621,6 @@
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Threading.Channels.dll"
     },
     {
-      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/+4DnaqiX.gz",
-      "SourceId": "OnlineBank_FE",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.WebAssembly.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.WebAssembly.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.WebAssembly.dll"
-    },
-    {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/+FH9S5PX.gz",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
@@ -3551,6 +3636,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Security.AccessControl.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/+nwfmM5i.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/+wU7I3UH.gz",
@@ -3672,6 +3774,23 @@
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Collections.Specialized.dll"
     },
     {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/30l0Lum2.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Metadata.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Metadata.dll"
+    },
+    {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/3aeOw4Hv.gz",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
@@ -3755,6 +3874,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Reflection.Emit.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/4q2KhDqj.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Web.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/5t6aPDVG.gz",
@@ -3893,23 +4029,6 @@
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Runtime.Numerics.dll"
     },
     {
-      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/6WQUooAi.gz",
-      "SourceId": "OnlineBank_FE",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.dll"
-    },
-    {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/75i5REBe.gz",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
@@ -4010,6 +4129,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Threading.Thread.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/9ZSd+NEc.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.WebAssembly.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.WebAssembly.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.WebAssembly.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/A8S07gCL.gz",
@@ -4233,6 +4369,23 @@
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Windows.dll"
     },
     {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/c9BjIXUj.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Logging.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.Logging.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.Logging.dll"
+    },
+    {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/cgfGwmzW.gz",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
@@ -4265,6 +4418,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Net.WebProxy.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/CmfYyt0g.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Tokens.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.Tokens.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.Tokens.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/cTxespkT.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.Abstractions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.Abstractions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.Abstractions.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/DDnCQAR5.gz",
@@ -4454,21 +4641,21 @@
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.FileProviders.Abstractions.dll"
     },
     {
-      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/eu4llUGU.gz",
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/eMkE+k+T.gz",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
       "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
       "BasePath": "/",
-      "RelativePath": "_framework/blazor.webassembly.js.gz",
-      "AssetKind": "All",
+      "RelativePath": "_framework/System.IdentityModel.Tokens.Jwt.dll.gz",
+      "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/blazor.webassembly.js",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.IdentityModel.Tokens.Jwt.dll",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/blazor.webassembly.js"
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.IdentityModel.Tokens.Jwt.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/EyQl1D5e.gz",
@@ -4520,23 +4707,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.IO.FileSystem.Primitives.dll"
-    },
-    {
-      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/FqMdLhOO.gz",
-      "SourceId": "OnlineBank_FE",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/fQT7w4iA.gz",
@@ -4743,6 +4913,23 @@
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.IO.Pipes.AccessControl.dll"
     },
     {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/GZiCtfuf.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/blazor.webassembly.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/blazor.webassembly.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/blazor.webassembly.js"
+    },
+    {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/gZiK0uXo.gz",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
@@ -4845,23 +5032,6 @@
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Configuration.Binder.dll"
     },
     {
-      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/HmsCQ8R2.gz",
-      "SourceId": "OnlineBank_FE",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Metadata.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Metadata.dll"
-    },
-    {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/Ho1B3MlG.gz",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
@@ -4877,6 +5047,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Diagnostics.Process.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/hU8GAcOK.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Bcl.TimeProvider.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Bcl.TimeProvider.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Bcl.TimeProvider.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/I+tLkaYC.gz",
@@ -4928,6 +5115,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Configuration.FileExtensions.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/iksa9wXz.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.IdentityModel.JsonWebTokens.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.JsonWebTokens.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.IdentityModel.JsonWebTokens.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/ioyetu3P.gz",
@@ -5098,23 +5302,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Security.Cryptography.OpenSsl.dll"
-    },
-    {
-      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/Ku5gFR9f.gz",
-      "SourceId": "OnlineBank_FE",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.JSInterop.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/KzMhT61B.gz",
@@ -5389,6 +5576,23 @@
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Net.Http.dll"
     },
     {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/NM4mj0AE.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Logging.Abstractions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Logging.Abstractions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Logging.Abstractions.dll"
+    },
+    {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/nQx2bRpq.gz",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
@@ -5610,6 +5814,40 @@
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Net.Quic.dll"
     },
     {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/pUc2klW1.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Forms.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/PWzN5Ett.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.JSInterop.WebAssembly.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.WebAssembly.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.WebAssembly.dll"
+    },
+    {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/PwZP96ha.gz",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
@@ -5761,23 +5999,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Reflection.Emit.ILGeneration.dll"
-    },
-    {
-      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/QUPXQg6q.gz",
-      "SourceId": "OnlineBank_FE",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.JSInterop.WebAssembly.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.WebAssembly.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/qyZiu46M.gz",
@@ -6137,23 +6358,6 @@
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Private.Xml.Linq.dll"
     },
     {
-      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/TMcRPeta.gz",
-      "SourceId": "OnlineBank_FE",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Web.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Web.dll"
-    },
-    {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/TnseR2i3.gz",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
@@ -6222,23 +6426,6 @@
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Security.dll"
     },
     {
-      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/uA5cdgLY.gz",
-      "SourceId": "OnlineBank_FE",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Forms.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Components.Forms.dll"
-    },
-    {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/uFzBPvkd.gz",
       "SourceId": "OnlineBank_FE",
       "SourceType": "Computed",
@@ -6254,23 +6441,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.IO.Compression.dll"
-    },
-    {
-      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/UgLZ9pwA.gz",
-      "SourceId": "OnlineBank_FE",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.Extensions.Logging.Abstractions.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Logging.Abstractions.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.Extensions.Logging.Abstractions.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/uHqQxN6C.gz",
@@ -6305,6 +6475,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Private.Uri.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/v+h1mITg.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/v0+1ViW8.gz",
@@ -6662,6 +6849,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/System.Core.dll"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/WQ5c4ybX.gz",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Computed",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.JSInterop.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/bin/Debug/net7.0/wwwroot/_framework/Microsoft.JSInterop.dll"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/obj/Debug/net7.0/build-gz/WRTtVkoC.gz",
@@ -7682,6 +7886,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/wwwroot/js/site.js",
+      "SourceId": "OnlineBank_FE",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "js/site.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/site.js"
     },
     {
       "Identity": "/Users/redahaloubi/Projects/OnlineBank_FE/OnlineBank_FE/wwwroot/sample-data/weather.json",

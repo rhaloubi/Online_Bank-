@@ -15,7 +15,7 @@
     font-display: swap;
 }
 
-h1, h2, h3, h4, h5, h6, a, li, ul, ol, span, strong, em, figcaption, th, tr, td, input, label {
+h1, h2, h3, h4, h5, h6, a, li, ul, ol, span, strong, em, figcaption, th, tr, td, input, input::placeholder, label {
     padding: 0;
     margin: 0;
     font-style: normal;
@@ -76,3 +76,11 @@ select option {
         content: var(--blazor-load-percentage-text, "Loading");
     }
 
+.custom-input {
+    margin-bottom: 0.5rem; /* Adjust margin */
+    width: 50%; /* Set width */
+    border: 1px solid #FFD700; /* Example border color */
+    background-color: black; /* Background color */
+    color: white; /* Text color */
+    border-radius: 0.25rem; /* Rounded corners */
+}

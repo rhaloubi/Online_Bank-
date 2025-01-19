@@ -6,7 +6,6 @@ using Blazored.LocalStorage;
 
 namespace OnlineBank_FE.Services
 {
-
     public class AuthService
     {
         private readonly HttpClient _httpClient;
@@ -18,7 +17,7 @@ namespace OnlineBank_FE.Services
             _localStorage = localStorage;
         }
 
-        public async Task<bool> LoginAsync(LoginRequest request)
+        public async Task<bool> LoginAsync(Client request)
         {
             var response = await _httpClient.PostAsJsonAsync("Clients/login", request);
 
@@ -40,6 +39,13 @@ namespace OnlineBank_FE.Services
             return false;
         }
 
+        public async Task<bool> RegisterAsync(Client request)
+        {
+            var response = await _httpClient.PostAsJsonAsync("Clients/register", request);
+
+            return response.IsSuccessStatusCode;
+        }
+
         public async Task InitializeAuth()
         {
             var token = await _localStorage.GetItemAsync<string>("authToken");
@@ -56,7 +62,11 @@ namespace OnlineBank_FE.Services
             _httpClient.DefaultRequestHeaders.Authorization = null;
         }
 
-        public bool IsLoggedIn => _httpClient.DefaultRequestHeaders.Authorization != null;
+        public async Task<bool> IsLoggedInAsync()
+        {
+            var token = await _localStorage.GetItemAsync<string>("authToken");
+            return !string.IsNullOrEmpty(token);
+        }
     }
 
     public class LoginResponse

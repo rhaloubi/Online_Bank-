@@ -1,0 +1,51 @@
+﻿@page "/transfer"
+@inject OnlineBank_FE.Services.TransactionService TransactionService
+
+<h3>Transfer Funds</h3>
+
+<div class="mb-3">
+    <label for="targetClientId" class="form-label">Target Client ID:</label>
+    <input type="number" id="targetClientId" class="form-control" @bind="targetClientId" />
+</div>
+
+<div class="mb-3">
+    <label for="amount" class="form-label">Amount:</label>
+    <input type="number" id="amount" class="form-control" @bind="amount" step="0.01" />
+</div>
+
+<button class="btn btn-primary" @onclick="SubmitTransfer">Transfer</button>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p class="@messageClass">@message</p>
+}
+
+@code {
+    private int targetClientId;
+    private decimal amount;
+    private string? message;
+    private string messageClass = "";
+
+    private async Task SubmitTransfer()
+    {
+        try
+        {
+            var success = await TransactionService.TransferAsync(targetClientId, amount);
+            if (success)
+            {
+                message = "Transfer successful!";
+                messageClass = "text-success";
+            }
+            else
+            {
+                message = "Transfer failed. Please check the inputs or your balance.";
+                messageClass = "text-danger";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"An error occurred: {ex.Message}";
+            messageClass = "text-danger";
+        }
+    }
+}
